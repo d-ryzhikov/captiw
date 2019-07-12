@@ -1,0 +1,11 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+pylama = "*"
+pre-commit = "*"
+
+[packages]
+captiw = {path = ".",editable = true}
