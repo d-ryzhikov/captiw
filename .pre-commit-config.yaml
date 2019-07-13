@@ -3,3 +3,8 @@ repos:
      rev: 0.1.2
      hooks:
      - id: pylama
+
+   - repo: https://github.com/d-ryzhikov/pipenv-lock-pre-commit
+     rev: 0.1.0
+     hooks:
+     - id: pipenv-lock
