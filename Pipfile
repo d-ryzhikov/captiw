@@ -8,4 +8,4 @@ pylama = "*"
 pre-commit = "*"
 
 [packages]
-Flask = "~=1.1.1"
+aiohttp = "*"
