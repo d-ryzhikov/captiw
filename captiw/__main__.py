@@ -1,3 +1,4 @@
 from . import webapp
 
-webapp.main()
+if __name__ == "__main__":
+    webapp.main()
