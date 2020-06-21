@@ -1,7 +1,9 @@
 import os
 from typing import Dict, Optional
 
-from schema import And, Optional as SchemaOptional, Schema, Use
+from schema import And
+from schema import Optional as SchemaOptional
+from schema import Schema, Use
 
 
 def valid_port(port: int) -> bool:
@@ -19,16 +21,14 @@ def valid_port(port: int) -> bool:
 Config = Schema(
     {
         SchemaOptional("host", default="localhost"): str,
-        "port": And(Use(int), valid_port)
+        "port": And(Use(int), valid_port),
     },
-    ignore_extra_keys=True
+    ignore_extra_keys=True,
 )
 
 
 def load_config(
-    settings: Optional[Dict[str, str]] = None,
-    case_insensitive=True,
-    use_env=True,
+    settings: Optional[Dict[str, str]] = None, case_insensitive=True, use_env=True,
 ):
     settings = settings or {}
     if use_env:

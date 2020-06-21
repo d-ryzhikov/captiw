@@ -2,11 +2,12 @@
 import logging
 
 from aiohttp import web
+
 from aiohttp_apispec import (
     docs,
     json_schema,
-    validation_middleware,
     setup_aiohttp_apispec,
+    validation_middleware,
 )
 from marshmallow import Schema, fields
 
@@ -30,10 +31,7 @@ class Validated(Schema):
 @routes.post("/validate")
 @docs(
     tags=["validate"],
-    responses={
-        200: {"description": "OK"},
-        422: {"description": "Validation error"}
-    }
+    responses={200: {"description": "OK"}, 422: {"description": "Validation error"}},
 )
 @json_schema(Validated)
 async def validate_json(request):

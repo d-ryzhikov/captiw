@@ -2,11 +2,12 @@
 from ipaddress import IPv4Address
 from typing import Optional
 
+from pydantic import BaseModel, SecretStr
+
 import uvicorn
 from fastapi import FastAPI
 from fastapi.responses import PlainTextResponse
 from fastapi.staticfiles import StaticFiles
-from pydantic import BaseModel, SecretStr
 
 app = FastAPI()
 
